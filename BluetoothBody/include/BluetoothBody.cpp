@@ -28,3 +28,8 @@ void BluetoothBody::connect()
 void BluetoothBody::connect(String connectToName)
 {
 }
+
+bool BluetoothBody::isConnected()
+{
+    return SerialBT.connected();
+}

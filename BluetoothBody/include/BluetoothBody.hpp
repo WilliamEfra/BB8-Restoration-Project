@@ -16,6 +16,7 @@ public:
     void connect(String connectToName);
     String getName();
     String getConnectToName();
+    bool isConnected();
 };
 
 #endif // BLUETOOTHRCV_HPP

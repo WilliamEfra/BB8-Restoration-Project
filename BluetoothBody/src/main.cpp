@@ -3,11 +3,11 @@
 #include "BluetoothBody.hpp"
 
 BluetoothSerial SerialBT;
+BluetoothBody Bluetooth = BluetoothBody("tempName", "tempConnectToName");
 
 void setup()
 {
   // put your setup code here, to run once:
-  BluetoothBody reciever = BluetoothBody("tempName", "tempConnectToName");
   Serial.begin(115200);
   Serial.println("Bluetooth Started! Ready to pair...");
 }
@@ -15,10 +15,10 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
-  while (!SerialBT.connected())
+  /* while (!Bluetooth.isConnected())
   {
     SerialBT.connect("MasterBluetoothBB8");
-  }
+  } */
   if (Serial.available())
   {
     SerialBT.write(Serial.read());
