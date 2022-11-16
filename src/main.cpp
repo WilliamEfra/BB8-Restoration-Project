@@ -14,6 +14,10 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
+  while (!SerialBT.connected())
+  {
+    SerialBT.connect("MasterBluetoothBB8");
+  }
   if (Serial.available())
   {
     SerialBT.write(Serial.read());
