@@ -8,8 +8,8 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/home/casino/Documents/PlatformIO/Projects/BB8/include",
-                "/home/casino/Documents/PlatformIO/Projects/BB8/src",
+                "/home/casino/Documents/PlatformIO/Projects/BB8/BluetoothBody/include",
+                "/home/casino/Documents/PlatformIO/Projects/BB8/BluetoothBody/src",
                 "/home/casino/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src",
                 "/home/casino/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                 "/home/casino/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",
@@ -235,8 +235,8 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/home/casino/Documents/PlatformIO/Projects/BB8/include",
-                    "/home/casino/Documents/PlatformIO/Projects/BB8/src",
+                    "/home/casino/Documents/PlatformIO/Projects/BB8/BluetoothBody/include",
+                    "/home/casino/Documents/PlatformIO/Projects/BB8/BluetoothBody/src",
                     "/home/casino/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src",
                     "/home/casino/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                     "/home/casino/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",

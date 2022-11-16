@@ -1,13 +1,14 @@
 #include <Arduino.h>
 #include "BluetoothSerial.h"
+#include "BluetoothBody.hpp"
 
 BluetoothSerial SerialBT;
 
 void setup()
 {
   // put your setup code here, to run once:
+  BluetoothBody reciever = BluetoothBody("tempName", "tempConnectToName");
   Serial.begin(115200);
-  SerialBT.begin();
   Serial.println("Bluetooth Started! Ready to pair...");
 }
 
