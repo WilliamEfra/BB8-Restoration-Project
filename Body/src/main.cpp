@@ -1,9 +1,5 @@
 #include <Arduino.h>
-#include "BluetoothSerial.h"
-#include "BluetoothBody.hpp"
-
-BluetoothSerial SerialBT;
-BluetoothBody Bluetooth = BluetoothBody("tempName", "tempConnectToName");
+#include <WiFi.h>
 
 void setup()
 {
@@ -19,13 +15,5 @@ void loop()
   {
     SerialBT.connect("MasterBluetoothBB8");
   } */
-  if (Serial.available())
-  {
-    SerialBT.write(Serial.read());
-  }
-  if (SerialBT.available())
-  {
-    Serial.write(SerialBT.read());
-  }
   delay(20);
 }
