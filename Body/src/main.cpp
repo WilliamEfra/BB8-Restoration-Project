@@ -27,7 +27,10 @@ void setup()
   Serial.println(F("Started AP with SSID BB8_Master and PASSWORD BB8_Master_7739376"));
   Serial.print(F("Waiting for connection from slave"));
   while (WiFi.status() != WL_CONNECTED)
+  {
     Serial.print(F("."));
+    delay(200);
+  }
 }
 
 void loop()
