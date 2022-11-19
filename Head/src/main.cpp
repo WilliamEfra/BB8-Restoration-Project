@@ -10,6 +10,14 @@ WiFiClient TCPClient;
 
 const IPAddress SERVER_IP(192, 168, 1, 4);
 
+<<<<<<< HEAD
+=======
+void setupStation();
+void reconnect();
+void setup();
+void loop();
+
+>>>>>>> TCP
 void setupStation()
 {
   WiFi.mode(WIFI_STA);
@@ -23,6 +31,21 @@ void setupStation()
   Serial.println(F("Connected to BB8_Master"));
 }
 
+<<<<<<< HEAD
+=======
+void reconnect()
+{
+  Serial.println(F("Disconnected from BB8_Master"));
+  Serial.print(F("Connecting to BB8_Master"));
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    Serial.print(F("."));
+    delay(1000);
+  }
+  Serial.println(F("Connected to BB8_Master"));
+}
+
+>>>>>>> TCP
 void setup()
 {
   // put your setup code here, to run once:
@@ -42,5 +65,13 @@ void loop()
   {
     TCPClient.write("Hello World\n");
   }
+<<<<<<< HEAD
+=======
+  if (!WiFi.status() == WL_CONNECTED)
+  {
+    // TODO stop all actions
+    reconnect();
+  }
+>>>>>>> TCP
   delay(200);
 }
