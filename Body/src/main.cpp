@@ -7,25 +7,19 @@ const unsigned long BAUDRATE = 115200;
 const int SERVER_PORT = 4080;
 
 WiFiServer TCPServer(SERVER_PORT);
-<<<<<<< HEAD
-=======
 WiFiClient TCPClient;
->>>>>>> TCP
 
 // WiFi stuff, this is specific to the Master
 IPAddress ip(192, 168, 1, 4);
 IPAddress gateway(192, 168, 1, 254);
 IPAddress subnet(255, 255, 255, 0);
 
-<<<<<<< HEAD
-=======
 void setupAP();
 void reconnect();
 void getSlaveMessage();
 void setup();
 void loop();
 
->>>>>>> TCP
 void setupAP()
 {
   WiFi.mode(WIFI_AP);
@@ -39,9 +33,7 @@ void setupAP()
     Serial.print(F("."));
     delay(1000);
   }
-<<<<<<< HEAD
 
-=======
   Serial.println(F("\nConnected to slave"));
 }
 
@@ -54,20 +46,16 @@ void reconnect()
     Serial.print(F("."));
     delay(1000);
   }
->>>>>>> TCP
   Serial.println(F("\nConnected to slave"));
 }
 
 void getSlaveMessages()
 {
-<<<<<<< HEAD
-=======
   if (TCPClient.available())
   {
     char c = TCPClient.read();
     Serial.print(c);
   }
->>>>>>> TCP
 }
 
 void setup()
@@ -81,31 +69,17 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
-<<<<<<< HEAD
-  WiFiClient TCPClient = TCPServer.available();
-=======
   TCPClient = TCPServer.available();
->>>>>>> TCP
   if (TCPClient)
   {
     Serial.println(F("Client connected"));
     while (TCPClient.connected())
     {
-<<<<<<< HEAD
-      if (TCPClient.available())
-      {
-        char c = TCPClient.read();
-        Serial.print(c);
-      }
-=======
       getSlaveMessages();
->>>>>>> TCP
     }
     Serial.println(F("Client disconnected"));
     TCPClient.stop();
   }
-<<<<<<< HEAD
-=======
   // Attempt reconnect to station if disconnected
   if (!WiFi.softAPgetStationNum())
   {
@@ -113,6 +87,5 @@ void loop()
     reconnect();
   }
 
->>>>>>> TCP
   delay(200);
 }
