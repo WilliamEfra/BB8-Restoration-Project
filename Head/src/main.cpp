@@ -1,28 +1,36 @@
 #include <Arduino.h>
 #include <WiFi.h>
 
-const char *ssid = "BB8_Master";
-const char *password = "BB8_Master_7739376";
-const unsigned long baudRate = 115200;
+const char *SSID = "BB8_Master";
+const char *PASSWORD = "BB8_Master_7739376";
+const unsigned long BAUDRATE = 115200;
+const int SERVER_PORT = 4080;
 
-// Variables
-bool sendCmd = false;
-String slaveCmd = "0";
-String slaveState = "0";
+WiFiClient TCPClient;
 
-// WiFi stuff, this is specific to the Master, the slave needs a different IP address
-WiFiClient browser;
+const IPAddress SERVER_IP(192, 168, 1, 4);
 
-void setup()
+void setupStation()
 {
-  // put your setup code here, to run once:
-  Serial.begin(baudRate);
   WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
+  WiFi.begin(SSID, PASSWORD);
   Serial.print(F("Connecting to BB8_Master"));
   while (WiFi.status() != WL_CONNECTED)
   {
     Serial.print(F("."));
+    delay(1000);
+  }
+  Serial.println(F("Connected to BB8_Master"));
+}
+
+void setup()
+{
+  // put your setup code here, to run once:
+  Serial.begin(BAUDRATE);
+  setupStation();
+  while (!TCPClient.connect(SERVER_IP, SERVER_PORT))
+  {
+    Serial.println(F("Failed to connect to server"));
     delay(1000);
   }
 }
@@ -30,5 +38,9 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
+  while (TCPClient.connected())
+  {
+    TCPClient.write("Hello World\n");
+  }
   delay(200);
 }
