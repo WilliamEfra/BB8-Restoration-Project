@@ -57,12 +57,17 @@ void loop()
   // put your main code here, to run repeatedly:
   while (TCPClient.connected())
   {
-    TCPClient.write("Hello World\n");
+    TCPClient.write("Hello World!\n");
   }
   if (!WiFi.status() == WL_CONNECTED)
   {
     // TODO stop all actions
     reconnect();
+    while (!TCPClient.connect(SERVER_IP, SERVER_PORT))
+    {
+      Serial.println(F("Trying to reconnect to server"));
+      delay(1000);
+    }
   }
   delay(200);
 }
