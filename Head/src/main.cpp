@@ -1,10 +1,10 @@
 #include <Arduino.h>
 #include <WiFi.h>
 
-const char *SSID = "BB8_Master";
-const char *PASSWORD = "BB8_Master_7739376";
-const unsigned long BAUDRATE = 115200;
-const int SERVER_PORT = 4080;
+#define SSID "BB8_Master"
+#define PASSWORD "BB8_Master_7739376"
+#define BAUDRATE 115200
+#define SERVER_PORT 4080
 
 WiFiClient TCPClient;
 
